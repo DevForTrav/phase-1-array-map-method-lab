@@ -12,5 +12,13 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+  return tutorials.map(function(element){
+      let sentence = element.split(" ");
+      let newArray = []
+      for (const x of sentence) {
+        let firstLetter = x.charAt(0).toUpperCase() + x.slice(1)
+        newArray.push(firstLetter)
+      }
+      return newArray.join(' ')
+    })
 }
